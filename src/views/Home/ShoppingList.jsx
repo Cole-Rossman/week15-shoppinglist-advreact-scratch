@@ -4,7 +4,7 @@ import Item from '../../components/Items/Item';
 
 export default function ShoppingList() {
   const [newItem, setNewItem] = useState('');
-  const { items, handleAddItem, handleDeleteItem, handleUpdateItem } = useList();
+  const { items, handleAddItem } = useList();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +24,15 @@ export default function ShoppingList() {
       onChange={(event) => setNewItem(event.target.value)}
       />
     </form>
+    <ul>
+      {items.map((item) => {
+        return <li key={item.id}>
+          <Item 
+          item={item}
+          />
+        </li>
+      })}
+    </ul>
     </>
   )
 }
