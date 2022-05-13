@@ -56,7 +56,8 @@ export default function Item({ item }) {
         onChange={(e) => {
             handleUpdateItem({
                 ...item,
-                purchased: e.target.value,
+                // adding checked at the end of e.target allows the value to become boolean therefor, you can toggle between checked and unchecked
+                purchased: e.target.checked,
             });
         }}
         />
