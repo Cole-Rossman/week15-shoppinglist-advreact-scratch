@@ -17,7 +17,7 @@ export default function Item({ item }) {
         >
             <input
             value={item.text}
-            aria-label="Edit"
+            placeholder='Edit content'
             onChange={(e) => {
                 handleUpdateItem({
                     ...item,
@@ -26,7 +26,9 @@ export default function Item({ item }) {
             }}
             />
 
-            <button type='submit'>
+            <button 
+            aria-label={`${item.text}-save`}
+            type='submit'>
                 Save
             </button>
         </form>
@@ -39,6 +41,7 @@ export default function Item({ item }) {
         </p>
         <button
         type="button"
+        aria-label={`${item.text}-edit`}
         onClick={() => setIsEditing(true)}
         >
             Edit
@@ -63,6 +66,7 @@ export default function Item({ item }) {
         />
         {content}
         <button
+        aria-label={`${item.text}-delete`}
         type="button"
         onClick={() => handleDeleteItem(item.id)}
         >
