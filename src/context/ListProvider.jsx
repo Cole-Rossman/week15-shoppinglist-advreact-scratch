@@ -35,7 +35,7 @@ export const ListProvider = ({ children }) => {
     const [items, dispatch] = useReducer(listReducer, initialItem);
 
     const handleAddItem = (text) => {
-        dispatch({ type: 'ADD ITEM', payload: { text} });
+        dispatch({ type: 'ADD ITEM', payload: {text} });
     };
 
     const handleUpdateItem = (item) => {
