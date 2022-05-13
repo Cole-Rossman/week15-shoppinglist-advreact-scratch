@@ -15,7 +15,7 @@ export default function ShoppingList() {
   return (
     <>
     <h1>Shopping Items</h1>
-    <form onSubmit={handleSubmit}>
+    <form>
       <input
       type="text"
       name="newItem"
@@ -23,6 +23,9 @@ export default function ShoppingList() {
       value={newItem}
       onChange={(event) => setNewItem(event.target.value)}
       />
+      <button onClick={handleSubmit}>
+        Add item
+      </button>
     </form>
     <ul>
       {items.map((item) => {
